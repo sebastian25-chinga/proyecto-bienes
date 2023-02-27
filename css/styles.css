@@ -79,6 +79,11 @@ h4{
 
 
 /*Header*/
+.site-header {
+    background-color: #333333;
+    padding: 1rem 0 3rem 0;
+}
+
 .site-header.inicio{
     background-image: url(/img/header.jpg);
     background-position: center center;
@@ -310,4 +315,29 @@ h4{
 .contenedor-footer{
     padding: 1.2rem;
 }
+
+/* Pagina nosotros */
+.contenido-nosotros {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 2rem;
+}
+
+.texto-nosotros blockquote {
+    font-weight: 900;
+    font-size: 1.8rem;
+    margin: 0;
+    padding: 1rem 0 3rem 0;
+}
+
+.texto-nosotros p{
+    font-weight: 200;
+    font-size: 1.5rem;
+}
+
+.nosotros-title{
+    font-size: 3rem;
+}
+
+
 
