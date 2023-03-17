@@ -19,6 +19,7 @@ img{
 }
 
 .contenedor{
+    width: 95%;
     max-width: 120rem; /*1200px*/
     margin: 0 auto;
 }
@@ -67,6 +68,20 @@ h4{
     margin-top: 3rem;
     display: inline-block;
     text-align: center;
+    border: none;
+    display: block;
+    flex: 0 0 100%;
+}
+
+@media (min-width: 768px) {
+    .boton {
+        display: inline-block;
+        flex: 0 0 auto;
+    }
+}
+
+.boton:hover{
+    cursor: pointer;
 }
 
 .boton-amarillo{
@@ -97,6 +112,13 @@ h4{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .contenido-header {
+        text-align: left;
+    }
 }
 
 .contenido-header h1{
@@ -107,60 +129,121 @@ h4{
 }
 
 .barra{
-    display: flex;
-    /*alinear horizontalmente*/
-    justify-content: space-between;
-    /*alinear verticalmente*/
-    align-items: center;
     padding-top: 3rem;
+}
+
+@media (min-width: 768px) {
+    .barra{
+        display: flex;
+        /*alinear horizontalmente*/
+        justify-content: space-between;
+        /*alinear verticalmente*/
+        align-items: center;
+    }
 }
 
 /*Navegacion*/
 .navegacion a{
     color: white;
     text-decoration: none;
-    font-size: 1.8rem; /** 1.8 rem = 18px */
-    margin-right: 2rem;
+    font-size: 2.2rem;
+    display: block;
+}
+
+@media (min-width: 768px) {
+    .navegacion a{
+        display: inline-block;
+        font-size: 1.8rem; /** 1.8 rem = 18px */
+        margin-right: 2rem;
+    }
+    .navegacion a:last-of-type{
+        margin: 0;
+    }
 }
 
 .navegacion a:hover{
     color: #71b100;
 }
 
-.navegacion a:last-of-type{
-    margin: 0;
+/* Mobile menu */
+.mobile-menu img {
+    width: 5rem;
 }
 
+@media (min-width: 768px) {
+    .mobile-menu {
+        display: none;
+    }
+}
 
+.navegacion:target {
+    display: block;
+}
+
+.navegacion {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .navegacion {
+        display: block;
+    }
+}
 
 /*Iconos nosotros**/
-.iconos-nosotros{
-    display: flex;
-    justify-content: space-between;
+@media (min-width: 768px) {
+    .iconos-nosotros{
+        display: flex;
+        justify-content: space-between;
+    }
 }
 
 .icono{
-    flex-basis: calc(33.3% - 1rem);
     text-align: center;
+}
+
+@media (min-width: 768px) {
+    .icono{
+        flex-basis: calc(33.3% - 1rem);
+    }
 }
 
 .icono h3{
     text-transform: uppercase;
 }
 
-/*Anuncios*/
-.contenedor-anuncios{
+/** Anuncio **/
+.resumen-propiedad {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+}
+
+/*Anuncios*/
+@media (min-width: 768px) {
+    .contenedor-anuncios{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }   
 }
 
 .anuncio{
-    flex-basis: calc(33.3% - 1rem);
+    /* flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: calc(33.3% - 1rem); */
     /* border-style: solid;
     border-color: #b5b5b5;
     border-width: 1px; */
     border: 1px solid #b5b5b5;
     background-color: #f5f5f5;
+    margin-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+    .anuncio {
+        flex: 0 0 calc(33.3% - 1rem);
+    }
 }
 
 .contenido-anuncio{
@@ -177,6 +260,7 @@ h4{
 }
 
 .iconos-caracteristicas{
+    margin-right: 1.2rem;
     list-style: none;
     padding: 0;
     display: flex;
@@ -208,7 +292,7 @@ h4{
 }
 
 .contenido-contacto{
-    flex: 1;
+    flex: 0 0 95% ;
     color: white;
 }
 
@@ -217,35 +301,44 @@ h4{
 }
 
 /*Seccion inferior*/
-.seccion-inferior{
-    display: flex;
-    justify-content: space-between;
-}
+@media (min-width: 768px) {
+    .seccion-inferior{
+        display: flex;
+        justify-content: space-between;
+    }
 
-.seccion-inferior.blog{
-    flex-basis: 60%;
-}
+    .seccion-inferior.blog{
+        flex-basis: 60%;
+    }
 
-.seccion-inferior.testimoniales{
-    flex-basis: calc(40% - 2rem);
+    .seccion-inferior.testimoniales{
+        flex-basis: calc(40% - 2rem);
+    }
 }
 
 .entrada-blog{
-    display: flex;
-    justify-content: space-between;
     margin-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+    .entrada-blog {
+        display: flex;
+        justify-content: space-between;
+    }
 }
 
 .entrada-blog:last-of-type{
     margin-bottom: 0;
 }
 
-.entrada-blog .imagen{
-    flex-basis: 40%;
-}
-
-.entrada-blog .texto-entrada{
-    flex-basis: calc(60% - 3rem);
+@media (min-width: 768px) {
+    .entrada-blog .imagen{
+        flex-basis: 40%;
+    }
+    
+    .entrada-blog .texto-entrada{
+        flex-basis: calc(60% - 3rem);
+    }
 }
 
 .texto-entrada a{
@@ -306,10 +399,17 @@ h4{
 }
 
 .parte-final{
-    color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    padding: 3rem ;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .parte-final{
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
 }
 
 .contenedor-footer{
@@ -317,10 +417,12 @@ h4{
 }
 
 /* Pagina nosotros */
-.contenido-nosotros {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-column-gap: 2rem;
+@media (min-width: 768px) {
+    .contenido-nosotros {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-column-gap: 2rem;
+    }
 }
 
 .texto-nosotros blockquote {
@@ -339,5 +441,52 @@ h4{
     font-size: 3rem;
 }
 
+.contenido-centrado{
+    max-width: 800px;
+}
 
+/* Contacto */
+legend{
+    font-size: 1.8rem;
+    color: #333333;
+}
 
+label{
+    font-weight: 700;
+    text-transform: uppercase;
+    display: block;
+}
+
+input:not([type="submit"]),
+textarea,
+select{
+    padding: 1rem;
+    display: block;
+    background-color: #e1e1e1;
+    margin-bottom: 2rem;
+    width: 100%;
+    border-radius: 1rem;
+    border: none;
+}
+
+input[type="radio"]{
+    width: auto;
+    margin: 0;
+}
+
+textarea{
+    height: 20rem;
+}
+
+.contacto p{
+    font-size: 1.4rem;
+    color: #333333;
+    margin: 2rem 0 0 0;
+}
+
+.forma-contacto{
+    display: flex;
+    justify-content: space-between;
+    max-width: 20rem;
+    align-items: center;
+}
